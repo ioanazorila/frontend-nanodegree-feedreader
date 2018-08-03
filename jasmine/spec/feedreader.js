@@ -57,7 +57,7 @@ $(function() {
          * a single element with class 'menu-icon-link' on webpage
          * a single element with class 'feed' on webpage
          */
-        const body = document.querySelector('body');
+        const body = $('body');
 
         /* Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
@@ -65,7 +65,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('menu is hidden by default', function() {
-            expect(body.classList.contains('menu-hidden')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
 
          /* Write a test that ensures the menu changes
@@ -78,11 +78,11 @@ $(function() {
 
             // does the menu display when clicked
             menuIcon.click();
-            expect(body.classList.contains('menu-hidden')).toBe(false);
+            expect(body.hasClass('menu-hidden')).toBe(false);
 
             // does it hide when clicked again
             menuIcon.click();
-            expect(body.classList.contains('menu-hidden')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
     });
 
